@@ -10,7 +10,8 @@
         {
             "data" : [ 
                 {"name": "alias-list"}, 
-                {"description": "lista los alias en la sesion actual"}
+                {"description": "lista los alias en la sesion actual"},
+                {"abreviation": "{ als }"}
             ] 
         },
         {

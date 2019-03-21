@@ -30,9 +30,11 @@ $cemu = "D:\Applications\Desktop.Microsoft\App-Installer\Computer\_Development\C
 # ejecución
 CMD /c IF NOT EXIST $prof\PoshThemes MKLINK /j $prof\PoshThemes $cemu\PoshThemes
 CMD /c IF NOT EXIST $prof\profile.ps1 MKLINK $prof\profile.ps1 $cemu\Powershell.ps1
-CMD /c IF NOT EXIST $prof\Modules\aliases MKDIR $prof\Modules\Aliases
+CMD /c IF NOT EXIST $prof\Modules\aliases MKDIR $prof\Modules\aliases
 CMD /c IF NOT EXIST $prof\Modules\aliases\aliases.ps1 MKLINK $prof\Modules\aliases\aliases.psm1 $script\_alias.ps1
-& $edit $prof\profile.ps1
+CMD /c IF NOT EXIST $prof\Modules\imports MKDIR $prof\Modules\imports
+CMD /c IF NOT EXIST $prof\Modules\imports\imports.psm1 MKLINK $prof\Modules\imports\imports.psm1 $script\_imports.ps1
+& $edit $cemu\Powershell.ps1
 
 # cierra la terminal
 Get-Process ConEmu64 | Foreach-Object { $_.CloseMainWindow() | Out-Null } | stop-process -force
