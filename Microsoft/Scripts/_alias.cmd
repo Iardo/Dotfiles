@@ -1,12 +1,13 @@
-@ECHO off
+@echo off
 
-:: PATHS
-SETLOCAL
-SET SCRIPT=%USERPROFILE%\.scripts
-SET EDITOR="D:\Applications\Desktop.Microsoft\App-Installer\Computer\_Development\Computer-Develop\[PR] SublimeText\sublime_text.exe"
+:: paths
+setlocal
+set script=%USERPROFILE%\.scripts
+set editor="d:\applications\desktop.microsoft\app-installer\computer\_development\computer-develop\[pr] sublimetext\sublime_text.exe"
 
 
-:: COMMANDS
-DOSKEY alias=%EDITOR% %SCRIPT%\_alias.cmd
+:: commands
+doskey alias=%editor% %script%\_alias.cmd
+doskey posh=powershell
 
 

@@ -2,34 +2,55 @@
 "members" :
     [
         {
+            "data" : [ 
+                {"name": "alias"},
+                {"description": "edita \"aliases.ps1\""}
+            ]
+        },
+        {
+            "data" : [ 
+                {"name": "alias-list"}, 
+                {"description": "lista los alias en la sesion actual"}
+            ] 
+        },
+        {
+            "data" : [ 
+                {"name": "chrome"}, 
+                {"description": "ejecuta google chrome"}
+            ] 
+        },
+        {
             "data" : [
-                    { "name": "reload" },
-                    { "description": "carga nuevamente el profile" }
-                ]
+                {"name": "comd"},
+                {"description": "cambia el shell a cmd"}
+            ]
         },
         {
             "data" : [ 
-                    { "name": "profile" },
-                    { "description": "edita \"profile.ps1\"" }
-                ] 
-        },
-        {
-            "data" : [ 
-                    { "name": "alias"} ,
-                    { "description": "edita \"aliases.ps1\"" } 
-                ]
-        },
-        {
-            "data" : [ 
-                    { "name": "alias-show"} , 
-                    { "description": "muestra los alias en la sesion" } 
+                {"name": "profile"},
+                {"description": "edita \"profile.ps1\""}
             ] 
         },
         {
-            "data" : [ 
-                    { "name": "chrome"} , 
-                    { "description": "ejecuta google chrome" } 
-            ] 
+            "data" : [
+                {"name": "reload"},
+                {"description": "carga nuevamente el profile"}
+            ]
+        },
+        {
+            "data" : [
+                {"name": "script-list"},
+                {"description": "lista todos los scripts"},
+                {"abreviation": "{ runsl }"}
+            ]
+        },
+        {
+            "data" : [
+                {"name": "script-run"},
+                {"description": "ejecuta cualquier script sin necesidad de un \"alias\""},
+                {"abreviation": "{ runs -args }"},
+                {"flags": "{ -l }"}
+            ]
         }
     ]
 }

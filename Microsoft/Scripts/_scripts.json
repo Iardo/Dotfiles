@@ -1,0 +1,19 @@
+{
+"members" :
+    [
+        {
+            "data" : [ 
+                {"name": "console"},
+                {"description": "prueba de nodejs"},
+                {"plataform": "node"}
+            ] 
+        },
+        {
+            "data" : [ 
+                {"name": "searchfile"},
+                {"description": "busca un archivo dentro de una carpeta recursivamente"},
+                {"plataform": "powershell"}
+            ]
+        }
+    ]
+}

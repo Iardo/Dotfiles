@@ -1,1 +1,8 @@
-D:/Applications/Desktop.Microsoft/App-Installer/Computer/_Development/Computer-Terminal/[FR] ConEmu/Powershell.ps1
+# IMPORT
+import-module posh-git
+import-module oh-my-posh
+import-module aliases -disablenamechecking
+
+# CONFIG
+set-theme uaihu
+
