@@ -1,8 +1,8 @@
 # PATHS
-$script = "$env:USERPROFILE\.scripts"
-$profil = "$env:USERPROFILE\Documents\WindowsPowerShell"
+$shell = "$env:USERPROFILE\.scripts\powershell\"
+$nodes = "$env:USERPROFILE\.scripts\node\"
 
 # IMPORT
-import-module $script\fastrunner.psm1 -disablenamechecking
+import-module $shell\fastrunner.psm1 -disablenamechecking
 
 

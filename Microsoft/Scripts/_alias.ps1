@@ -13,7 +13,7 @@ set-alias chrome $chrome
 
 # FUNCTION
 function alias {
-    start-process $editor $script\_alias.ps1
+    & $editor $script\_alias.ps1
 }
 
 # imprime una lista de aliases

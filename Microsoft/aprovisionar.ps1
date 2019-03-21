@@ -16,7 +16,7 @@ Install-Module zlocation -Scope currentuser
 
 # lista los modulos instalados
 get-installedmodule
-$pause = read-host "ENTER para continuar..."
+read-host "ENTER para continuar..."
 
 
 
