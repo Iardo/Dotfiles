@@ -1,0 +1,1 @@
+D:/Applications/Desktop.Microsoft/App-Installer/Computer/_Development/Computer-Terminal/[FR] ConEmu/Powershell.ps1

@@ -1,0 +1,1 @@
+D:/Applications/Desktop.Microsoft/_OS/aprovisionar.cmd
