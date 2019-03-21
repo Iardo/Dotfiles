@@ -1,0 +1,9 @@
+# ignore these folders:
+/.vscode/**
+/node_modules/**
+/microsoft/scripts/node/**
+/microsoft/scripts/powershell/**
+
+# ignore these files:
+/_todo.todo
+/package-lock.json
