@@ -27,6 +27,13 @@
             ]
         },
         {
+            "data" : [
+                {"name": "godot"},
+                {"description": "ejecuta godot engine"},
+                {"abreviation": "{ dot }"}
+            ]
+        },
+        {
             "data" : [ 
                 {"name": "profile"},
                 {"description": "edita \"profile.ps1\""}

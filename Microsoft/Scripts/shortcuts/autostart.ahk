@@ -146,6 +146,18 @@ If  winexist("ahk_exe xnviewmp.exe"){
 }
 return
 
+; winyl
+~^!m:: ; ctlr + alt + t
+keywait control
+keywait alt
+
+if  winexist("ahk_exe ConEmu64.exe"){
+    winactivate ahk_exe ConEmu64.exe
+} else {
+    run "D:\Applications\Desktop.Microsoft\App-Installer\Production\_Multimedia\Production-Audio\[FR] Winyl\Winyl.exe"
+}
+return
+
 
 
 
