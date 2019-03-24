@@ -8,20 +8,25 @@ $godot = "D:\Applications\Desktop.Microsoft\App-Installer\Graphic\_Engine\[FO] G
 set-alias chrome $chrome
 set-alias godot $godot
 # ABREVIATION
-set-alias als alias-list
+set-alias als alias
 set-alias dot $godot
 
 
 # FUNCTION
 function alias {
-    & $editor $rootdir\_alias.ps1
-}
+    # pase de parametros
+    if($args[0]){
+        $argument = $args[0].tolower()
 
-# imprime una lista de aliases
-function alias-list {
-    $aliases = get-content "$rootdir\_alias.json" -raw | convertfrom-json | select-object -expand members 
-    $aliases | select-object @{name="Nombre";e={$_.data | select -expand name}},@{name="Descripcion";e={$_.data | select -expand description}},@{name="Abreviacion";e={$_.data | select -expand abreviation}},@{name="Argumentos";e={$_.data | select -expand flags}}
-    write-host ""
+        if($argument -eq "-l"){
+            # imprime una lista de aliases
+            $aliases = get-content "$rootdir\_alias.json" -raw | convertfrom-json | select-object -expand members 
+            $aliases | select-object @{name="Nombre";e={$_.data | select -expand name}},@{name="Descripcion";e={$_.data | select -expand description}},@{name="Abreviacion";e={$_.data | select -expand abreviation}},@{name="Argumentos";e={$_.data | select -expand flags}}
+            write-host ""
+        }
+    } else {
+        & $editor $rootdir\_alias.ps1
+    }
 }
 
 function comd {
@@ -37,7 +42,7 @@ function reload {
     # los cambios hechos dentro de las funciones persisten en la sesión
     #                         ⮦
     import-module aliases -force -disablenamechecking
-    . $profil\profile.ps1
+    . $conemu\Powershell.ps1
     write-host "~ profile re-importado`n" -foregroundcolor darkblue
 }
 
