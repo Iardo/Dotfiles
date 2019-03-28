@@ -14,12 +14,11 @@ set-alias dot $godot
 
 # FUNCTION
 function alias {
-    # pase de parametros
     if($args[0]){
         $argument = $args[0].tolower()
 
+        # imprime una lista de aliases
         if($argument -eq "-l"){
-            # imprime una lista de aliases
             $aliases = get-content "$rootdir\_alias.json" -raw | convertfrom-json | select-object -expand members 
             $aliases | select-object @{name="Nombre";e={$_.data | select -expand name}},@{name="Descripcion";e={$_.data | select -expand description}},@{name="Abreviacion";e={$_.data | select -expand abreviation}},@{name="Argumentos";e={$_.data | select -expand flags}}
             write-host ""
@@ -31,6 +30,24 @@ function alias {
 
 function comd {
     cmd \d
+}
+
+# comandos relacionados con powershell
+function posh {
+    if($args[0]){
+        $argument = $args[0].tolower()
+
+        # limpia el "history" de powershell
+        if($argument -eq "-c"){
+            remove-item (get-psreadlineoption).historysavepath
+            write-host "~ history eliminado" -foregroundcolor darkblue
+            write-host "ADVERTENCIA: la sesion va a cerrarse, presione cualquier tecla para continuar..." -foregroundcolor red
+            read-host " "
+            # cierra la terminal
+            get-process ConEmu64 | foreach-object { $_.closemainwindow() | out-null } | stop-process -force
+            exit
+        }
+    }
 }
 
 function profile {

@@ -1,10 +1,10 @@
-# PATHS
+# importación de modulos
+# IMPORT
 $shell = "$env:USERPROFILE\.scripts\powershell\"
-$nodes = "$env:USERPROFILE\.scripts\node\"
+get-childitem ($shell + "*.psm1") | foreach-object { import-module -disablenamechecking (join-path $shell $_.name)} | out-null
 
 # IMPORT
-import-module $shell\adminsudo.psm1 -disablenamechecking
-import-module $shell\dnswap.psm1 -disablenamechecking
-import-module $shell\fastrunner.psm1 -disablenamechecking
-
+function safedoc {frunner safedoc}
+function manscrap {frunner manscrap}
+function manrem {frunner manrem}
 

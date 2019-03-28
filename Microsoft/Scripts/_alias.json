@@ -46,10 +46,39 @@
         },
         {
             "data" : [
+                {"name": "gitninja"},
+                {"description": "comandos de git"},
+                {"flags": "{ -l }"}
+            ]
+        },
+        {
+            "data" : [
                 {"name": "godot"},
                 {"description": "ejecuta godot engine"},
                 {"abreviation": "{ dot }"}
             ]
+        },
+        {
+            "data" : [
+                {"name": "manrem"},
+                {"description": "renombra grupos de archivos"},
+                {"abreviation": "{ rem }"}
+            ]
+        },
+        {
+            "data" : [
+                {"name": "manscrap"},
+                {"description": "administra descargas de magazines"},
+                {"abreviation": "{ msp -args }"},
+                {"flags": "{ -t }"}
+            ]
+        },
+        {
+            "data" : [ 
+                {"name": "posh"},
+                {"description": "comandos relacionados con powershell"},
+                {"flags": "{ -c }"}
+            ] 
         },
         {
             "data" : [ 
@@ -62,6 +91,12 @@
                 {"name": "reload"},
                 {"description": "carga nuevamente el profile"}
             ]
+        },
+        {
+            "data" : [ 
+                {"name": "safedoc"},
+                {"description": "crea copias de seguridad"}
+            ] 
         }
     ]
 }

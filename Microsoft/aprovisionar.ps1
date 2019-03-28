@@ -37,6 +37,6 @@ CMD /c IF NOT EXIST $prof\Modules\imports\imports.psm1 MKLINK $prof\Modules\impo
 & $edit $cemu\Powershell.ps1
 
 # cierra la terminal
-Get-Process ConEmu64 | Foreach-Object { $_.CloseMainWindow() | Out-Null } | stop-process -force
+get-process ConEmu64 | foreach-object { $_.closemainwindow() | out-null } | stop-process -force
 exit
 
