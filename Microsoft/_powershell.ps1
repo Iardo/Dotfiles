@@ -10,3 +10,6 @@ import-module aliases -disablenamechecking
 # CONFIG
 set-theme uaihu
 
+# PATH
+set-location D:\_Document\_Personal\_Scripts
+

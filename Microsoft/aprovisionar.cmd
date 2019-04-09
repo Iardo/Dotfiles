@@ -14,8 +14,8 @@ setlocal
 set startup=%USERPROFILE%\AppData\Roaming\Microsoft\Windows\Start^ Menu\Programs\STARTUP
 set scripts=D:\_Document\_Personal\_Scripts
 set systems=D:\Applications\Desktop.Microsoft\_OS
-set nodescript=D:\Proyecto\Computer\Cloud\_Github\Nodescripts\source
-set powershell=D:\Proyecto\Computer\Cloud\_Github\Powerscripts\source
+set nodescript=D:\Proyecto\Computer\Terminal\_Github\Nodescripts\source
+set powershell=D:\Proyecto\Computer\Terminal\_Github\Powerscripts\source
 
 :: añade un symlink a la carpeta de "_scripts"
 :: esto facilita la sincronización entre distintas máquinas

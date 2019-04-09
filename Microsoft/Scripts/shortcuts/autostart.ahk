@@ -4,176 +4,130 @@
 ; CONFIG
 ICON = D:\Multimedia-C\_Icon\_Programs\Media-Round\Launchpad.ico
 menu, tray, icon, %ICON%
+run %A_WORKINGDIR%\global.ahk
 
 
-; encapsulamiento de taran
 #if (getkeystate("F23", "P"))
+; encapsulamiento de taran
+    ; ESC
+    ; MODO GLOBAL:
+    escape::
+    reset()
+    run %A_WORKINGDIR%\global.ahk
+    toast("global")
+    return
 
-; PRODUCTION:
-; ESC
-escape::
-reset()
-run %A_WORKINGDIR%\shortcuts\production.ahk
-toast("production")
-return
+    ; TAB
+    ; MODO TOOLING:
+    tab::
+    reset()
+    run %A_WORKINGDIR%\tooling.ahk
+    toast("tooling")
+    return
 
-; MODELING:
-; TAB
-; tab::
-reset()
-run %A_WORKINGDIR%\shortcuts\model.ahk
-toast("model")
-return
-
-; DESIGN:
-; 🠐
-; {=}::
-run %A_WORKINGDIR%\shortcuts\design.ahk
-toast("design")
-return
-
-; DEVELOPMENT:
-; FN
-; backspace::
-run %A_WORKINGDIR%\shortcuts\development.ahk
-toast("development")
+    ; BACKSPACE
+    ; MODO COMMANDS:
+    backspace::
+    reset()
+    run %A_WORKINGDIR%\commands.ahk
+    toast("commands")
+    return
+; encapsulamiento de taran
+#if
 return
 
 ; GLOBAL:
-; lo que hace global es elminar cualquier otro script de capa abierto
 ; -
-reset()
-toast("global")
+; PANIC BUTTON
+numpadsub::
+send, #d
+sleep, 2000
 return
 
-
-; SHORTCUTS:
 ; +
-; numpadadd::
-send {lwin down}{tab}{lwin up}
+; muestra las aplicaciones
+numpadadd::
+send, #{tab}
+sleep 500
+return
+
+; + & CTRL
+; administrador de tareas
+^numpadadd::
+if winexist("ahk_exe Taskmgr.exe"){
+    if winactive("ahk_exe Taskmgr.exe"){
+        winminimize ahk_exe Taskmgr.exe
+    } else {
+        winactivate ahk_exe Taskmgr.exe
+    }
+} else {
+    run taskmgr.exe
+}
 return
 
 ; ENTER
-; numpadenter::
-;   pseudo FN
+; CTRL
+numpadenter::ctrl
 return
 
-; NUM
-; numlock::
-return
 
-; /
-; numpaddiv::
-return
-
-; *
-; numpadmult::
-return
-
-; 7
-; numpad7::
-return
-
-; 8
-; numpad8::
-return
-
-; 9
-; numpad9::
-return
-
-; 4
-; numpad4::
-return
-
-; 5
-; numpad5::
-return
-
-; 6
-; numpad6::
-return
-
-; 1
-; numpad1::
-return
-
-; 2
-; numpad2::
-return
-
-; 3
-; numpad3::
-return
-
-; 0
-; numpad0::
-return
-
-; .
-; numpaddot::
-return
-
-#if
-return
-; encapsulamiento de taran
-
-
-
-
-; TEMPORALES:
-; terminal de comandos:
-~^!t:: ; ctlr + alt + t
-keywait control
-keywait alt
-
-if  winexist("ahk_exe ConEmu64.exe"){
-    winactivate ahk_exe ConEmu64.exe
+; KEYBOARD:
+; CTLR + ALT + T
+; CONEMU
+^!t::
+if winexist("ahk_exe ConEmu64.exe"){
+    if winactive("ahk_exe ConEmu64.exe"){
+        winminimize ahk_exe ConEmu64.exe
+    } else {
+        winactivate ahk_exe ConEmu64.exe
+    }
 } else {
     run "D:\Applications\Desktop.Microsoft\App-Installer\Computer\_Development\Computer-Terminal\[FR] ConEmu\ConEmu64.exe"
 }
 return
 
-; xnview
-~^!x:: ; ctlr + alt + x
-keywait control
-keywait alt
-
-If  winexist("ahk_exe xnviewmp.exe"){
-    winactivate ahk_exe xnviewmp.exe
+; CTLR + ALT + X
+; XNVIEW
+^!x:: 
+if winexist("ahk_exe xnviewmp.exe"){
+    if winactive("ahk_exe xnviewmp.exe"){
+        winminimize ahk_exe xnviewmp.exe
+    } else {
+        winactivate ahk_exe xnviewmp.exe
+    }
 } else {
     run "C:\Program Files\XnViewMP\xnviewmp.exe", max
 }
 return
 
-; winyl
-~^!m:: ; ctlr + alt + t
-keywait control
-keywait alt
-
-if  winexist("ahk_exe ConEmu64.exe"){
-    winactivate ahk_exe ConEmu64.exe
+; CTLR + ALT + M
+; WINYL
+^!m::
+if winexist("ahk_exe Winyl.exe"){
+    if winactive("ahk_exe Winyl.exe"){
+        winminimize ahk_exe Winyl.exe
+    } else {
+        winactivate ahk_exe Winyl.exe
+    }
 } else {
     run "D:\Applications\Desktop.Microsoft\App-Installer\Production\_Multimedia\Production-Audio\[FR] Winyl\Winyl.exe"
 }
 return
 
 
-
-
 ; FUNCTIONS:
 ; notificaciones toast
 toast(byref name){
     traytip Cambio de modo:, %name%
-    sleep 1800  ; 1.8 seconds
+    ;sleep 1800  ; 1.8 seconds
 }
-; cambia a la capa seleccionada cerrando las demas
+; cierra todas las capas
 reset(){
-    layers := ["production", "model", "design", "development"]
+    layers := ["global", "tooling", "commands"]
+    detecthiddenwindows, on
     for index, element in layers {
-        detecthiddenwindows, on
-        winclose %A_WORKINGDIR%\shortcuts\%element%.ahk ahk_class AutoHotkey
-        ; msgbox %A_WORKINGDIR%\shortcuts\%element%.ahk
+        winclose %A_WORKINGDIR%\%element%.ahk ahk_class AutoHotkey
+        ; msgbox %A_WORKINGDIR%\%element%.ahk
     }
 }
 
