@@ -9,10 +9,10 @@ if %errorlevel% equ 0 (
 )
 
 
-:: paths
+:: PATHS:
 setlocal 
 set startup=%USERPROFILE%\AppData\Roaming\Microsoft\Windows\Start^ Menu\Programs\STARTUP
-set scripts=D:\_Document\_Personal\_Scripts
+set scripts=D:\Applications\_Dotfiles\~Shared\Scripts
 set systems=D:\Applications\Desktop.Microsoft\_OS
 set nodescript=D:\Proyecto\Computer\Terminal\_Github\Nodescripts\source
 set powershell=D:\Proyecto\Computer\Terminal\_Github\Powerscripts\source
@@ -35,7 +35,7 @@ echo autostart = "%STARTUP%\autostart.lnk" >> %script%
 echo set whost = wscript.createobject("wscript.shell") >> %script%
 echo set opath = whost.createshortcut(autostart) >> %script%
 echo opath.targetpath = "%SCRIPTS%\shortcuts\autostart.ahk" >> %script%
-echo opath.workingdirectory = "%SCRIPTS%" >> %script%
+echo opath.workingdirectory = "%SCRIPTS%\shortcuts" >> %script%
 echo opath.save >> %script%
 
 cscript /nologo %script%

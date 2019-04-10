@@ -1,8 +1,8 @@
 # ignore these folders:
 /.vscode/**
 /node_modules/**
-/microsoft/scripts/node/**
-/microsoft/scripts/powershell/**
+/~Shared/Scripts/node/**
+/~Shared/Scripts/powershell/**
 
 # ignore these files:
 /_todo.todo

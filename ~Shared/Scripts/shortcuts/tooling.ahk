@@ -359,6 +359,66 @@ return
 return
 
 
+#if (winactive("title Adobe XD"))
+; 7
+; 
+; numpad7::
+return
+
+; 8
+; 
+; numpad8::
+return
+
+; 9
+; 
+; numpad9::
+return
+
+; 4
+; 
+; numpad4::
+return
+
+; 5
+; 
+; numpad5::
+return
+
+; 1
+; 
+; numpad1::
+return
+
+; 2
+; 
+; numpad2::
+return
+
+; 3
+; 
+; numpad3::
+return
+
+; 0
+; 
+numpad0::
+return
+
+; .
+; 
+numpaddot::
+return
+
+; . + CTRL
+; redo
+^numpaddot::^+z
+return
+
+#if
+return
+
+
 #if (winactive("ahk_exe CLIPStudioPaint.exe"))
 ; 7
 ; transform
@@ -943,8 +1003,15 @@ return
 
 #if (winactive("ahk_exe houdini.exe"))
 ; *
-; 
-; numpadmult::
+; menu tab
+numpadmult::
+send, {tab}
+return
+
+; * + CTRL
+; menu v
+^numpadmult::
+send, v
 return
 
 ; 7
@@ -963,18 +1030,39 @@ return
 return
 
 ; 4
-; 
-; numpad4::
+; mode vertex
+numpad4::
+send, 2
+return
+
+; 4 + CTRL
+; tool move
+^numpad4::
+send, t
 return
 
 ; 5
-; 
-; numpad5::
+; mode edge
+numpad5::
+send, 3
+return
+
+; 5 + CTRL
+; tool rotate
+^numpad5::
+send, r
 return
 
 ; 6
-; 
-; numpad6::
+; mode face
+numpad6::
+send, 4
+return
+
+; 6 + CTRL
+; tool scale
+^numpad6::
+send, e
 return
 
 ; 1
@@ -1008,38 +1096,57 @@ return
 
 #if (winactive("ahk_exe ZBrush64.exe"))
 ; *
-; 
-; numpadmult::
+; mode edit
+numpadmult::
+send, t
 return
 
 ; 7
-; 
-; numpad7::
+; symmetry
+numpad7::
+send, x
 return
 
 ; 8
-; 
-; numpad8::
+; subdivide
+numpad8::
+send, ^d
 return
 
 ; 9
-; 
-; numpad9::
+; polyframe
+numpad9::
+send, +f
+return
+
+; 9 + CTRL
+; frame
+^numpad9::
+send, f
 return
 
 ; 4
-; 
-; numpad4::
+; tool move
+numpad4::
+send, w
+return
+
+; 4 + CTRL
+; tool draw
+^numpad4::
+send, q
 return
 
 ; 5
-; 
-; numpad5::
+; tool rotate
+numpad5::
+send, e
 return
 
 ; 6
-; 
-; numpad6::
+; tool scale
+numpad6::
+send, r
 return
 
 ; 1
@@ -1053,18 +1160,20 @@ return
 return
 
 ; 3
-; 
-; numpad3::
+; ALT
+numpad3::alt
 return
 
 ; 0
-; 
+; decrease brush size, -
 numpad0::
+send, [
 return
 
 ; .
-; 
+; increase brush size, +
 numpaddot::
+send, ]
 return
 
 #if
@@ -1077,105 +1186,54 @@ return
 ;   _|        _|    _|  _|    _|  _|    _|  _|    _|  _|            _|        _|    _|    _|  _|    _|_|
 ;   _|        _|    _|    _|_|    _|_|_|      _|_|      _|_|_|      _|      _|_|_|    _|_|    _|      _|
 
-#if (winactive("")) ; ADOBE AFTEREFFECTS
-; /
-; 
-; numpaddiv::
+#if (winactive("ahk_exe AfterFX.exe") || winactive("ahk_exe Adobe Audition CC.exe") || winactive("ahk_exe Adobe Premiere Pro.exe") || winactive("ahk_exe FL64.exe") || winactive("ahk_exe MilkyTracker.exe") || winactive("ahk_exe Renoise.exe"))
+; 0 + CTRL
+; undo
+^numpad0::^z
 return
 
-; *
-; 
-; numpadmult::
-return
-
-; 7
-; 
-; numpad7::
-return
-
-; 8
-; 
-; numpad8::
-return
-
-; 9
-; 
-; numpad9::
-return
-
-; 4
-; 
-; numpad4::
-return
-
-; 5
-; 
-; numpad5::
-return
-
-; 6
-; 
-; numpad6::
-return
-
-; 1
-; 
-; numpad1::
-return
-
-; 2
-; 
-; numpad2::
-return
-
-; 3
-; 
-; numpad3::
-return
-
-; 0
-; 
-; numpad0::
-return
-
-; .
-; 
-; numpaddot::
+; . + CTRL
+; redo
+^numpaddot::^+z
 return
 
 #if
 return
 
 
-#if (winactive("")) ; ADOBE PREMIERE
-; /
-; 
-; numpaddiv::
-return
-
+#if (winactive("ahk_exe AfterFX.exe"))
 ; *
 ; 
 ; numpadmult::
 return
 
 ; 7
-; 
-; numpad7::
+; fit 100%
+numpad7::
+send, !/
 return
 
 ; 8
-; 
-; numpad8::
+; add solid
+numpad8::
+send, ^y
+return
+
+; 8 + CTRL
+; add text
+^numpad8::
+send, ^+!t
 return
 
 ; 9
-; 
-; numpad9::
+; delete
+numpad9::delete
 return
 
 ; 4
-; 
-; numpad4::
+; tool move
+numpad4::
+send, v
 return
 
 ; 5
@@ -1184,13 +1242,20 @@ return
 return
 
 ; 6
-; 
-; numpad6::
+; play/canvas move
+numpad6::space
+return
+
+; 6 + CTRL
+; add keyframe
+^numpad6::
+send, ^!k
 return
 
 ; 1
-; 
-; numpad1::
+; work area start
+numpad1::
+send, b
 return
 
 ; 2
@@ -1199,68 +1264,91 @@ return
 return
 
 ; 3
-; 
-; numpad3::
+; work area end
+numpad3::
+send, n
 return
 
 ; 0
-; 
-; numpad0::
+; zoom out
+numpad0::
+send, -
 return
 
 ; .
-; 
-; numpaddot::
+; zoom in
+numpaddot::
+send, =
+return
+
 return
 
 #if
 return
 
 
-#if (winactive("")) ; ADOBE AUDITION
-; /
-; 
-; numpaddiv::
-return
-
+#if (winactive("ahk_exe Adobe Audition CC.exe"))
 ; *
 ; 
 ; numpadmult::
 return
 
 ; 7
-; 
-; numpad7::
+; normalize to -0.1 db
+numpad7::
+send, n
 return
 
 ; 8
-; 
-; numpad8::
+; deNoise
+numpad8::
+send, ^!n
+return
+
+; 8 + CTRL
+; deReverb
+^numpad8::
+send, ^!r
 return
 
 ; 9
-; 
-; numpad9::
+; delete
+numpad9::delete
 return
 
 ; 4
-; 
-; numpad4::
+; tool move
+numpad4::
+send, v
+return
+
+; 4 + CTRL
+; tool razor
+^numpad4::
+send, r
 return
 
 ; 5
-; 
-; numpad5::
+; record
+numpad5::
+send, +{space}
 return
 
 ; 6
-; 
-; numpad6::
+; play
+numpad6::space
+return
+
+; 6 + CTRL
+; pause
+^numpad6::
+send, ^+{space}
 return
 
 ; 1
-; 
-; numpad1::
+; panel waveform
+numpad1::
+send, 9
 return
 
 ; 2
@@ -1269,18 +1357,118 @@ return
 return
 
 ; 3
-; 
-; numpad3::
+; panel multitrack
+numpad3::
+send, 0
 return
 
 ; 0
-; 
-; numpad0::
+; zoom out
+numpad0::
+send, -
 return
 
 ; .
+; zoom in
+numpaddot::
+send, =
+return
+
+#if
+return
+
+
+#if (winactive("ahk_exe Adobe Premiere Pro.exe"))
+; *
 ; 
-; numpaddot::
+; numpadmult::
+return
+
+; 7
+; add solid
+numpad7::
+send, ^!r
+return
+
+; 7
+; add text
+^numpad7::
+send, ^t
+return
+
+; 8
+; 
+; numpad8::
+return
+
+; 9
+; delete
+numpad9::delete
+return
+
+; 4
+; tool move
+numpad4::
+send, v
+return
+
+; 4 + CTRL
+; tool razor
+^numpad4::
+send, c
+return
+
+; 5
+; tool hand
+numpad5::
+send, h
+return
+
+; 6
+; play
+numpad6::space
+return
+
+; 1
+; mark in
+numpad1::
+send, i
+return
+
+; 1 + CTRL
+; goto in
+^numpad1::
+send, ^+!i
+return
+
+; 2
+; insert
+numpad2::
+send, ,
+return
+
+; 3
+; mark end
+numpad3::
+send, o
+return
+
+; 3 + CTRL
+; goto end
+^numpad3::
+send, ^+!o
+return
+
+; 0
+; zoom out
+numpad0::
+send, -
+return
+
+; .
+; zoom in
+numpaddot::
+send, =
 return
 
 #if
@@ -1288,11 +1476,136 @@ return
 
 
 #if (winactive("ahk_exe FL64.exe"))
-; /
+; *
 ; 
-; numpaddiv::
+; numpadmult::
 return
 
+; 7
+; 
+; numpad7::
+return
+
+; 8
+; 
+; numpad8::
+return
+
+; 9
+; 
+; numpad9::
+return
+
+; 4
+; 
+; numpad4::
+return
+
+; 5
+; 
+; numpad5::
+return
+
+; 6
+; 
+; numpad6::
+return
+
+; 1
+; 
+; numpad1::
+return
+
+; 2
+; 
+; numpad2::
+return
+
+; 3
+; 
+; numpad3::
+return
+
+; 0
+; 
+; numpad0::
+return
+
+; .
+; 
+numpaddot::
+return
+
+#if
+return
+
+
+#if (winactive("ahk_exe MilkyTracker.exe"))
+; *
+; 
+; numpadmult::
+return
+
+; 7
+; 
+; numpad7::
+return
+
+; 8
+; 
+; numpad8::
+return
+
+; 9
+; 
+; numpad9::
+return
+
+; 4
+; 
+; numpad4::
+return
+
+; 5
+; 
+; numpad5::
+return
+
+; 6
+; 
+; numpad6::
+return
+
+; 1
+; 
+; numpad1::
+return
+
+; 2
+; 
+; numpad2::
+return
+
+; 3
+; 
+; numpad3::
+return
+
+; 0
+; 
+; numpad0::
+return
+
+; .
+; 
+numpaddot::
+return
+
+#if
+return
+
+
+#if (winactive("ahk_exe Renoise.exe"))
 ; *
 ; 
 ; numpadmult::
