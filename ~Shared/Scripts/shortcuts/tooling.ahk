@@ -1477,43 +1477,73 @@ return
 
 #if (winactive("ahk_exe FL64.exe"))
 ; *
-; 
-; numpadmult::
+; plugin pickers
+numpadmult::
+send, {F8}
 return
 
 ; 7
-; 
-; numpad7::
+; view playlist
+numpad7::
+send, {F5}
+return
+
+; 7 + CTRL
+; view mixer
+^numpad7::
+send, {F9}
 return
 
 ; 8
-; 
-; numpad8::
+; view channel rack
+numpad8::
+send, {F6}
+return
+
+; 8 + CTRL
+; view piano roll
+^numpad8::
+send, {F7}
 return
 
 ; 9
-; 
-; numpad9::
+; delete
+numpad9::delete
 return
 
 ; 4
-; 
-; numpad4::
+; tool selection
+numpad4::
+send, e
+return
+
+; 4 + CTRL
+; tool slice
+^numpad4::
+send, c
 return
 
 ; 5
-; 
-; numpad5::
+; tool draw
+numpad5::
+send, p
+return
+
+; 5 + CTRL
+; tool paint
+^numpad5::
+send, b
 return
 
 ; 6
-; 
-; numpad6::
+; play
+numpad6::space
 return
 
 ; 1
-; 
-; numpad1::
+; keyboard to piano
+numpad1::
+send, ^t
 return
 
 ; 2
@@ -1522,13 +1552,14 @@ return
 return
 
 ; 3
-; 
+; metronome
 ; numpad3::
+send, ^m
 return
 
 ; 0
 ; 
-; numpad0::
+numpad0::
 return
 
 ; .

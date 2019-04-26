@@ -1,8 +1,8 @@
 # PATHS
 $chrome = "C:\Program Files (x86)\Google\Chrome\Application\chrome.exe"
-$conemu = "D:\Applications\Desktop.Microsoft\App-Installer\Computer\_Development\Computer-Terminal\[FR] ConEmu"
-$editor = "D:\Applications\Desktop.Microsoft\App-Installer\Computer\_Development\Computer-Develop\[PR] SublimeText\sublime_text.exe"
+$dotfile = "D:\Applications\_Dotfiles"
 $godot = "D:\Applications\Desktop.Microsoft\App-Installer\Graphic\_Engine\[FO] Godot Engine\Godot 3.0.6\Godot 3.0.6.exe"
+$sublime = "D:\Applications\Desktop.Microsoft\App-Installer\Computer\_Development\Computer-Develop\[PR] SublimeText\SublimeText\sublime_text.exe"
 
 # COMMANDS
 set-alias chrome $chrome
@@ -24,7 +24,7 @@ function alias {
             write-host ""
         }
     } else {
-        & $editor $rootdir\_alias.ps1
+        & $sublime $rootdir\_alias.ps1
     }
 }
 
@@ -51,7 +51,7 @@ function posh {
 }
 
 function profile {
-    & $editor $conemu\Powershell.ps1
+    & $sublime $dotfile\~Shared\_Powershell.ps1
 }
 
 # carga nuevamente el profile

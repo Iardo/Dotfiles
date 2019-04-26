@@ -82,7 +82,7 @@ function write-theme {
     $timecolor = [system.consolecolor]::darkgreen
     $timestamp = get-date -uformat %r #R
 
-    $prompt += set-cursorforrightblockwrite -textlength ($timestamp.length + 2)
+    $prompt += set-cursorforrightblockwrite -textlength ($timestamp.length + 4)
     $prompt += write-prompt $theme.promptsymbols.backward -foregroundcolor $timecolor
     $prompt += write-prompt $theme.promptsymbols.space -backgroundcolor $timecolor
     $prompt += write-prompt $timestamp -foregroundcolor $theme.colors.foreground -backgroundcolor $timecolor
@@ -96,7 +96,7 @@ function write-theme {
     # escribe el postfix en nueva linea
     $prompt += set-newline
     $prompt += write-prompt -object $theme.promptsymbols.space -foregroundcolor $background
-    $prompt += ' '
+    $prompt += " "
     $prompt
 
 

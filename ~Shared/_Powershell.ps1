@@ -11,5 +11,6 @@ import-module aliases -disablenamechecking
 set-theme uaihu
 
 # PATH
-set-location D:\Applications\_Dotfiles\~Shared\Scripts
+# usar PATH evita la apertura del directorio de proyecto en VSCode
+# set-location D:\Applications\_Dotfiles\~Shared\Scripts
 

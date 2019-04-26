@@ -95,7 +95,9 @@
         {
             "data" : [ 
                 {"name": "safedoc"},
-                {"description": "crea copias de seguridad"}
+                {"description": "el sistema local de copias de seguridad"},
+                {"abreviation": "{ sdoc -args }"},
+                {"flags": "{ -h, -v }"}
             ] 
         }
     ]
