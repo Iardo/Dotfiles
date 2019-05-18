@@ -1,7 +1,5 @@
 <p align="center">
-    <video autoplay muted loop>
-        <source src="https://raw.githubusercontent.com/Iardo/Dotfiles/master/docs/usables/Logo.webm" type="video/webm">
-    </video>
+    <img src="https://raw.githubusercontent.com/Iardo/Dotfiles/master/docs/usables/Logo.gif">
     <h2 align="center">Dotfiles</h2>
     <p  align="center">
         Archivos de <b><i>configuración del sistema</i></b><br>
