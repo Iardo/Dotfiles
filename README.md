@@ -3,7 +3,7 @@
     <h2 align="center">Dotfiles</h2>
     <p  align="center">
         Archivos de <b><i>configuración del sistema</i></b><br>
-        <sub>✨ Aprovisiona es máquina ya ✨<sub>
+        <sub>✨ Aprovisiona esa máquina ya ✨<sub>
     <p>
     <p  align="center">
         <img src="https://raw.githubusercontent.com/Iardo/Dotfiles/master/docs/usables/Platform-blue.svg?sanitize=true">
