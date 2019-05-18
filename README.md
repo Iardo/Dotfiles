@@ -1,5 +1,5 @@
 <p align="center">
-    <img src="https://raw.githubusercontent.com/Iardo/Dotfiles/master/docs/usables/Logo.gif">
+    <img src="https://raw.githubusercontent.com/Iardo/Dotfiles/master/docs/usables/Logo-500px.gif" width="80">
     <h2 align="center">Dotfiles</h2>
     <p  align="center">
         Archivos de <b><i>configuración del sistema</i></b><br>
