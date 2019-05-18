@@ -21,5 +21,5 @@ Configuración para sistemas **`UNIX-like`** como distintas distribuciones de **
 
 
 ### 🖥 Microsoft:
-Configuración de sistemas Microsoft Windows, incluye uso de [**Powershell**](https://es.wikipedia.org/wiki/Windows_PowerShell). 
+Configuración de sistemas ***Microsoft Windows***, incluye uso de [**Powershell**](https://es.wikipedia.org/wiki/Windows_PowerShell). 
 
