@@ -1,7 +1,7 @@
 # PATHS
 $chrome = "C:\Program Files (x86)\Google\Chrome\Application\chrome.exe"
 $dotfile = "D:\Applications\_Dotfiles"
-$godot = "D:\Applications\Desktop.Microsoft\App-Installer\Graphic\_Engine\[FO] Godot Engine\Godot 3.0.6\Godot 3.0.6.exe"
+$godot = "D:\Applications\Desktop.Microsoft\App-Installer\Graphic\_Engine\[FO] Godot Engine\Godot\Godot 3.1.1.exe"
 $sublime = "D:\Applications\Desktop.Microsoft\App-Installer\Computer\_Development\Computer-Develop\[PR] SublimeText\SublimeText\sublime_text.exe"
 
 # COMMANDS
@@ -19,7 +19,7 @@ function alias {
 
         # imprime una lista de aliases
         if($argument -eq "-l"){
-            $aliases = get-content "$rootdir\_alias.json" -raw | convertfrom-json | select-object -expand members 
+            $aliases = get-content "$rootdir\_alias.ps1.json" -raw | convertfrom-json | select-object -expand members 
             $aliases | select-object @{name="Nombre";e={$_.data | select -expand name}},@{name="Descripcion";e={$_.data | select -expand description}},@{name="Abreviacion";e={$_.data | select -expand abreviation}},@{name="Argumentos";e={$_.data | select -expand flags}}
             write-host ""
         }
