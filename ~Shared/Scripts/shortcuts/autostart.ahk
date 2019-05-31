@@ -14,7 +14,7 @@ run %A_WORKINGDIR%\global.ahk
     escape::
     reset()
     run %A_WORKINGDIR%\global.ahk
-    toast("global")
+    toast("Global")
     return
 
     ; TAB
@@ -22,7 +22,7 @@ run %A_WORKINGDIR%\global.ahk
     tab::
     reset()
     run %A_WORKINGDIR%\tooling.ahk
-    toast("tooling")
+    toast("Tooling")
     return
 
     ; BACKSPACE
@@ -30,7 +30,7 @@ run %A_WORKINGDIR%\global.ahk
     backspace::
     reset()
     run %A_WORKINGDIR%\commands.ahk
-    toast("commands")
+    toast("Commands")
     return
 ; encapsulamiento de taran
 #if
@@ -52,17 +52,9 @@ sleep 500
 return
 
 ; + & CTRL
-; administrador de tareas
+; Fullscreen
 ^numpadadd::
-if winexist("ahk_exe Taskmgr.exe"){
-    if winactive("ahk_exe Taskmgr.exe"){
-        winminimize ahk_exe Taskmgr.exe
-    } else {
-        winactivate ahk_exe Taskmgr.exe
-    }
-} else {
-    run taskmgr.exe
-}
+send, {f11}
 return
 
 ; ENTER
