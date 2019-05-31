@@ -578,18 +578,6 @@ send, ^k
 send, ^m
 return
 
-; 1
-; jump to a newline
-numpad1::
-send, {end}
-send, {enter}
-return
-
-; 1 + CTRL
-; delele line
-^numpad1::^+k
-return
-
 ; 0
 ; cambio de pestaña ←
 numpad0::
@@ -632,17 +620,6 @@ return
 numpad8::F9
 return
 
-; 8 + CTRL
-; debug Godot
-^numpad8::
-if winexist("ahk_exe Godot 3.0.6.exe"){
-    winactivate ahk_class Engine ahk_exe Godot 3.0.6.exe
-    send, {F5}
-} else {
-    msgbox ninguna instacia de Godot abierta
-}
-return
-
 ; 9
 ; debug start
 numpad9::
@@ -661,32 +638,27 @@ send, ^+e
 send, ^{tab}
 return
 
-; 2
-; snippet: console.log()
-numpad2::
-setkeydelay, 1
-send, clog{tab}
+; 1
+; 
+; numpad1::
 return
 
-; 2 + CTRL
-; snippet: import ""
-^numpad2::
-setkeydelay, 1
-send, impt{tab}
+; 2
+; debug Godot
+numpad2::
+if winexist("ahk_exe Godot 3.0.6.exe"){
+    winactivate ahk_class Engine ahk_exe Godot 3.0.6.exe
+    send, {F5}
+} else {
+    msgbox ninguna instacia de Godot abierta
+}
 return
 
 ; 3
-; snippet: new function(){}
+; run node
 numpad3::
-setkeydelay, 1
-send, func{tab}
-return
-
-; 3 + CTRL
-; snippet: new class(){}
-^numpad3::
-setkeydelay, 1
-send, clsa{tab}
+send, ^l
+send, ^n
 return
 
 #if
@@ -707,6 +679,11 @@ return
 ; 9
 ; 
 ; numpad9::
+return
+
+; 1
+; 
+; numpad1::
 return
 
 ; 2
