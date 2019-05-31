@@ -23,3 +23,7 @@ Configuración para sistemas **`UNIX-like`** como distintas distribuciones de **
 ### 🖥 Microsoft:
 Configuración de sistemas ***Microsoft Windows***, incluye uso de [**Powershell**](https://es.wikipedia.org/wiki/Windows_PowerShell). 
 
+
+## Licencia:
+WTFPL © [**Iván Ramos**](http://www.iardoo.com)  
+
