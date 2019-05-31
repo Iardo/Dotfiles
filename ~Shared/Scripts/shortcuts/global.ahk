@@ -22,17 +22,17 @@ if winexist("ahk_exe WhatsApp.exe"){
 return
 
 ; / + CTRL
-; TELEGRAM
+; STATION
 ^numpaddiv::
-PATH = D:\Applications\Desktop.Microsoft\App-Installer\Computer\Computer-Network\Network-Messages\[FR] Telegram
-if winexist("ahk_exe Telegram.exe"){
-    if winactive("ahk_exe Telegram.exe"){
-        winclose ahk_exe Telegram.exe
+PATH = C:\Users\Iardo\AppData\Local\browserX
+if winexist("ahk_exe Station.exe"){
+    if winactive("ahk_exe Station.exe"){
+        winminimize ahk_exe Station.exe
     } else {
-        winactivate ahk_exe Telegram.exe
+        winactivate ahk_exe Station.exe
     }
 } else {
-    run "%PATH%\Telegram.exe"
+    run "%PATH%\Station.exe"
 }
 return
 
@@ -43,17 +43,16 @@ send, ^!t
 return
 
 ; * + CTRL
-; EVERYTHING
+; administrador de tareas
 ^numpadmult::
-PATH = C:\Program Files (x86)\Everything
-if winexist("ahk_exe Everything.exe"){
-    if winactive("ahk_exe Everything.exe"){
-        winclose ahk_exe Everything.exe
+if winexist("ahk_exe Taskmgr.exe"){
+    if winactive("ahk_exe Taskmgr.exe"){
+        winminimize ahk_exe Taskmgr.exe
     } else {
-        winactivate ahk_exe Everything.exe
+        winactivate ahk_exe Taskmgr.exe
     }
 } else {
-    run "%PATH%\Everything.exe"
+    run taskmgr.exe
 }
 return
 
