@@ -9,7 +9,8 @@ $dotf = "D:\Applications\_Dotfiles\~Shared"
 $edit = "D:\Applications\Desktop.Microsoft\App-Installer\Computer\_Development\Computer-Develop\[PR] SublimeText\SublimeText\sublime_text.exe"
 
 
-& $dotf\aprovisionar.ps1
+& $dotf\install-posh.ps1
+& $dotf\install-node.ps1
 # ejecución
 CMD /c IF NOT EXIST $prof\PoshThemes MKLINK /j $prof\PoshThemes $dotf\PoshThemes
 CMD /c IF NOT EXIST $prof\profile.ps1 MKLINK $prof\profile.ps1 $dotf\_Powershell.ps1
