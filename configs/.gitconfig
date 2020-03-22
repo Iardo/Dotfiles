@@ -1,0 +1,7 @@
+[user]
+	email  = iardoru@gmail.com
+	name   = Ivan Ramos
+    editor = "vim"
+[core]
+	excludesfile = /Users/ivan/.gitignore_global
+
