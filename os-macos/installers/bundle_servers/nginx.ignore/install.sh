@@ -8,5 +8,9 @@
 # 
 # https://nginx.org/en/
 #
-sudo 
+brew install nginx
+
+
+# SYMLINKS
+sudo ln -s /usr/local/etc/nginx/nginx.conf ~/Configs/nginx.conf
 

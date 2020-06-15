@@ -9,5 +9,5 @@
 # 
 # https://gitlist.org/
 # 
-echo "download gitlist from https://gitlist.org/"
+printf "download \e[32mgitlist \e[0mfrom \e[34mhttps://gitlist.org/ \e[0m \n"
 

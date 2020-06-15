@@ -8,5 +8,7 @@
 # clever—but none are Vim. Neovim is built for users who want the good 
 # parts of Vim, and more.
 # 
+# https://neovim.io/
+# 
 brew install neovim
-
+pip3 install neovim

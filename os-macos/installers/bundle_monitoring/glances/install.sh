@@ -8,5 +8,7 @@
 # utilization, mounted devices, total number of active processes and top
 # processes. 
 # 
+# https://nicolargo.github.io/glances/
+# 
 brew glances
 

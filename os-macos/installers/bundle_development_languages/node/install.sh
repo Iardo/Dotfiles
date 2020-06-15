@@ -7,7 +7,12 @@
 # can run JavaScript code on your machine as a standalone application, 
 # free of any web browser.
 # 
+# https://nodejs.org/es/
+# 
 brew install node
+
+
+# VERSION MANAGER
 curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.34.0/install.sh | bash
 nvm install node
 

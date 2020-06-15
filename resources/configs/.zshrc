@@ -2,13 +2,25 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/iardo/.oh-my-zsh"
-export PATH="$PATH:$PATH:/bin:$HOME:$HOME/bin:$HOME/.local/bin/:$HOME/Scripts/source/:$HOME/Scripts/third-party/:/usr/bin:/usr/local/bin"
+export ZSH="/Users/$USERNAME/.oh-my-zsh"
+export PATH=$PATH:/bin
+export PATH=$PATH:/usr/local/bin
+export PATH=$PATH:/usr/local/sbin
+export PATH=$PATH:$HOME/.local/bin/
+export PATH=$PATH:$HOME/Scripts/source/
+export PATH=$PATH:$HOME/Scripts/third-party/
+source ~/.zshrc_paths.zsh
+
+ACTUAL_DIR=$(pwd)
+
 
 # This loads nvm
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
+
+# This loads rvm
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
 
 autoload -U add-zsh-hook
 load-nvmrc() {
@@ -121,12 +133,14 @@ fi
 
 
 # User configured aliases
-alias gps="git push origin"
-alias gpl="git pull origin"
-alias cls="clear"
+source ~/.zshrc_aliases.zsh
+alias history_clean="rm -f ~/.zsh_history"
 alias reload="source ~/.zshrc"
 alias config="sublime ~/.zshrc"
 
+# Brew
+alias python=/usr/local/bin/python3
+alias pip=/usr/local/bin/pip3
 
 # User configured functions
 source ~/.zshrc_helpers.zsh
@@ -136,8 +150,4 @@ iardo_gitlab() {https://gitlab.com/Iardo/"$@".git;}
 cimg() { # curl image
     curl -s $@ | imgcat
 }
-
-
-
-
 

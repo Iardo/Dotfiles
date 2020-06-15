@@ -8,5 +8,7 @@
 # Erlang's runtime system has built-in support for concurrency, distribution 
 # and fault tolerance.
 # 
+# https://www.erlang.org/
+# 
 brew install erlang
 

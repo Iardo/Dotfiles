@@ -8,6 +8,7 @@
 # approach aim to help programmers write clear, logical code for small and 
 # large-scale projects.
 # 
+# 
 sudo apt-get install python python-dev python-setuptools -y
 sudo apt-get install python3-minimal python3-setuptools
 wget https://bootstrap.pypa.io/get-pip.py

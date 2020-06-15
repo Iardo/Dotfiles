@@ -8,5 +8,5 @@
 # 
 # https://openvpn.net
 #
-echo "download openvpn from https://openvpn.net/community-downloads/"
+printf "download \e[32mopenvpn \e[0mfrom \e[34mhttps://openvpn.net/community-downloads/ \e[0m \n"
 

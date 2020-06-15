@@ -1,0 +1,15 @@
+version: "1.0"
+tabs:
+  homedir:
+    title: "Iardo:home"
+    panes:
+      - title: "The Main Session"
+        position: "1/1"
+        commands:
+          - "cls"
+      - title: "The Moe Session"
+        position: "2/1"
+        commands:
+          - "smile"
+
+          
